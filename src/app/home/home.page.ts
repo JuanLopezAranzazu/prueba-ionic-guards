@@ -7,17 +7,23 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  loginUrl = '';
+  // loginUrl = '';
   constructor(private router: Router, private activateRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.loginUrl =
-      this.activateRoute.snapshot.queryParamMap.get('returnto') || 'profile';
-    console.log(this.loginUrl);
+    // this.loginUrl =
+    //   this.activateRoute.snapshot.queryParamMap.get('returnto') || 'profile';
+    // console.log(this.loginUrl);
   }
 
+  /*
   signIn() {
     localStorage.setItem('authenticated', '1');
     this.router.navigateByUrl(this.loginUrl);
+  }
+  */
+
+  signIn() {
+    this.router.navigateByUrl('/login');
   }
 }
